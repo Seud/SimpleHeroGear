@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcvrg4n1gk4nj"]
+
+[ext_resource type="Script" path="res://src/characters/player.gd" id="1_711jh"]
+[ext_resource type="PackedScene" uid="uid://qd00723uim2s" path="res://src/items/equipment.tscn" id="1_g5q1p"]
+[ext_resource type="PackedScene" uid="uid://rq8a5oiksov0" path="res://src/ui/unit_ui.tscn" id="2_e5xth"]
+[ext_resource type="Texture2D" uid="uid://ctnawnjqtoylk" path="res://icon.svg" id="4_e3uk2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4q85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e3uk2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_711jh")
+
+[node name="Equipment" parent="." instance=ExtResource("1_g5q1p")]
+offset_left = 336.0
+offset_right = 336.0
+
+[node name="PlayerUI" parent="." instance=ExtResource("2_e5xth")]
+offset_top = 144.0
+offset_bottom = 144.0
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 64)
+sprite_frames = SubResource("SpriteFrames_n4q85")
+
+[connection signal="equipment_changed" from="Equipment" to="." method="_on_equipment_equipment_changed"]
+[connection signal="equipment_changed" from="Equipment" to="PlayerUI" method="update_stats"]
+[connection signal="forward_pressed" from="PlayerUI" to="." method="_on_player_ui_forward_pressed"]
+[connection signal="stance_changed" from="PlayerUI" to="." method="_on_player_ui_stance_changed"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwxxyqtx8vw2j"]
+
+[ext_resource type="Script" path="res://src/Tooltip.gd" id="1_2vmig"]
+
+[node name="Tooltip" type="CanvasLayer"]
+script = ExtResource("1_2vmig")
+offset_x = 15.0
+offset_y = 15.0
+padding_x = 15.0
+padding_y = 15.0
+
+[node name="TooltipText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_right = 320.0
+offset_bottom = 24.0
+text = "."
+scroll_active = false
+metadata/_edit_group_ = true
+
+[node name="TooltipBG" type="ColorRect" parent="TooltipText"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.360784, 1)

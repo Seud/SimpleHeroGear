@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvgjcggmw3e4t"]
+
+[ext_resource type="Script" path="res://src/characters/combatant.gd" id="1_jckfs"]
+
+[node name="Combatant" type="Node"]
+script = ExtResource("1_jckfs")

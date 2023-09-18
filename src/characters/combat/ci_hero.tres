@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=2 format=3 uid="uid://bupy6qndj2xe6"]
+
+[ext_resource type="Script" path="res://src/characters/combat/combatant_info.gd" id="1_2atkc"]
+
+[resource]
+script = ExtResource("1_2atkc")
+id = "hero"
+name = "Hero"
+value = 1
+base_strength = 1.0
+base_dexterity = 1.0
+base_intelligence = 1.0
+base_vitality = 1.0
+base_hp = 100.0
+base_block = 10.0

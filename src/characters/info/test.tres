@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://bss4bossk4d85"]
+
+[ext_resource type="Resource" uid="uid://bcfdgsgtx7evq" path="res://src/characters/ai/ai_default.tres" id="1_dg0aw"]
+[ext_resource type="Resource" uid="uid://lxjep2tlblit" path="res://src/characters/combat/ci_test.tres" id="2_e4xmp"]
+[ext_resource type="Script" path="res://src/characters/info/character_info.gd" id="3_hv275"]
+
+[resource]
+script = ExtResource("3_hv275")
+id = "test"
+name = "Test"
+description = "Raise a toast to our tester !
+
+Has extreme testiness but moderate workiness. A fan of bugs, worms and the like."
+value = 1.0
+ai_info = ExtResource("1_dg0aw")
+combatant_info = ExtResource("2_e4xmp")

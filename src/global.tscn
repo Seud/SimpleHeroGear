@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8mbldx8v834"]
+
+[ext_resource type="Script" path="res://src/Global.gd" id="1_u2mcn"]
+[ext_resource type="Script" path="res://src/CharacterInfoPreloader.gd" id="2_jtebv"]
+[ext_resource type="Script" path="res://src/EncounterInfoPreloader.gd" id="3_iarau"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_u2mcn")
+
+[node name="CharacterInfoPreloader" type="ResourcePreloader" parent="."]
+script = ExtResource("2_jtebv")
+
+[node name="EncounterInfoPreloader" type="ResourcePreloader" parent="."]
+script = ExtResource("3_iarau")

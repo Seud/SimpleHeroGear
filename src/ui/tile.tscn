@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://s0xefu5tr0cl"]
+
+[ext_resource type="Script" path="res://src/ui/tile.gd" id="1_4v2y8"]
+
+[node name="Tile" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_4v2y8")
+
+[node name="TileBG" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 80.0
+mouse_filter = 2
+color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="TileText" type="Label" parent="TileBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "SLOT XX
+-XX.XXXX"
+horizontal_alignment = 1
+vertical_alignment = 1

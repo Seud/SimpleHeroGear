@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0gehih63tnv5"]
+
+[ext_resource type="Script" path="res://src/items/gear.gd" id="1_qj616"]
+[ext_resource type="PackedScene" uid="uid://s0xefu5tr0cl" path="res://src/ui/tile.tscn" id="2_vrqqb"]
+
+[node name="Gear" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qj616")
+
+[node name="Tile" parent="." instance=ExtResource("2_vrqqb")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2

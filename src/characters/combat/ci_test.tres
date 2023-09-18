@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=2 format=3 uid="uid://lxjep2tlblit"]
+
+[ext_resource type="Script" path="res://src/characters/combat/combatant_info.gd" id="1_rrml3"]
+
+[resource]
+script = ExtResource("1_rrml3")
+id = "test"
+name = "Toast"
+value = 1
+base_strength = 0.5
+base_dexterity = 1.0
+base_intelligence = 1.5
+base_vitality = 1.25
+base_hp = 8.0

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AIInfo" load_steps=2 format=3 uid="uid://bcfdgsgtx7evq"]
+
+[ext_resource type="Script" path="res://src/characters/ai/ai_info.gd" id="1_lq73r"]
+
+[resource]
+script = ExtResource("1_lq73r")
+muum = 0.0

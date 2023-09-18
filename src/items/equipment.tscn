@@ -1,0 +1,258 @@
+[gd_scene load_steps=4 format=3 uid="uid://qd00723uim2s"]
+
+[ext_resource type="Script" path="res://src/items/Equipment.gd" id="1_5tmlu"]
+[ext_resource type="PackedScene" uid="uid://gkyjomhin0ri" path="res://src/items/item_slot.tscn" id="2_mkyxs"]
+[ext_resource type="LabelSettings" uid="uid://d0l3ivi37s6dm" path="res://src/ui/text_setting.tres" id="3_86n7i"]
+
+[node name="Equipment" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5tmlu")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="EquippedSection" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 160.0
+
+[node name="EquippedLabel" type="Label" parent="EquippedSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_right = 240.0
+offset_bottom = 32.0
+mouse_filter = 0
+text = "EQUIPMENT"
+label_settings = ExtResource("3_86n7i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquippedBG" type="ColorRect" parent="EquippedSection"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 128.0
+color = Color(0.392157, 0.784314, 0.784314, 1)
+metadata/_edit_group_ = true
+
+[node name="Equipped" type="HBoxContainer" parent="EquippedSection/EquippedBG"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 296.0
+offset_bottom = 8.0
+theme_override_constants/separation = 16
+
+[node name="EquipSlot1" parent="EquippedSection/EquippedBG/Equipped" instance=ExtResource("2_mkyxs")]
+layout_mode = 2
+color = Color(0.784314, 0.784314, 0.784314, 1)
+type = 1
+
+[node name="EquipSlot2" parent="EquippedSection/EquippedBG/Equipped" instance=ExtResource("2_mkyxs")]
+layout_mode = 2
+color = Color(0.784314, 0.784314, 0.784314, 1)
+type = 2
+
+[node name="EquipSlot3" parent="EquippedSection/EquippedBG/Equipped" instance=ExtResource("2_mkyxs")]
+layout_mode = 2
+color = Color(0.784314, 0.784314, 0.784314, 1)
+type = 3
+
+[node name="EquipSlot4" parent="EquippedSection/EquippedBG/Equipped" instance=ExtResource("2_mkyxs")]
+layout_mode = 2
+color = Color(0.784314, 0.784314, 0.784314, 1)
+type = 4
+
+[node name="CrystalContainer" type="HBoxContainer" parent="EquippedSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 128.0
+offset_right = 224.0
+offset_bottom = 160.0
+metadata/_edit_group_ = true
+
+[node name="CrystalText" type="Label" parent="EquippedSection/CrystalContainer"]
+layout_mode = 2
+text = "Crystals"
+label_settings = ExtResource("3_86n7i")
+
+[node name="CrystalValue" type="Label" parent="EquippedSection/CrystalContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00e000"
+label_settings = ExtResource("3_86n7i")
+
+[node name="CrystalMod" type="Label" parent="EquippedSection/CrystalContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "+0.00e000"
+label_settings = ExtResource("3_86n7i")
+
+[node name="PouchSection" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 384.0
+offset_right = 768.0
+offset_bottom = 160.0
+
+[node name="PouchLabel" type="Label" parent="PouchSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_right = 232.0
+offset_bottom = 32.0
+mouse_filter = 0
+text = "POUCH"
+label_settings = ExtResource("3_86n7i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PouchBG" type="ColorRect" parent="PouchSection"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 128.0
+color = Color(0.392157, 0.392157, 0.392157, 1)
+metadata/_edit_group_ = true
+
+[node name="Pouch" type="HBoxContainer" parent="PouchSection/PouchBG"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_constants/separation = 16
+
+[node name="LootLevelContainer" type="HBoxContainer" parent="PouchSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 160.0
+metadata/_edit_group_ = true
+
+[node name="LootLevelName" type="Label" parent="PouchSection/LootLevelContainer"]
+layout_mode = 2
+text = "Loot level"
+label_settings = ExtResource("3_86n7i")
+
+[node name="LootLevelValue" type="Label" parent="PouchSection/LootLevelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00.00"
+label_settings = ExtResource("3_86n7i")
+
+[node name="LootLevelMod" type="Label" parent="PouchSection/LootLevelContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "+00.00"
+label_settings = ExtResource("3_86n7i")
+
+[node name="ScrapContainer" type="HBoxContainer" parent="PouchSection"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 206.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 160.0
+metadata/_edit_group_ = true
+
+[node name="ScrapName" type="Label" parent="PouchSection/ScrapContainer"]
+layout_mode = 2
+text = "Scrap"
+label_settings = ExtResource("3_86n7i")
+
+[node name="ScrapValue" type="Label" parent="PouchSection/ScrapContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("3_86n7i")
+
+[node name="LootContainer" type="HBoxContainer" parent="PouchSection"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 304.0
+offset_top = 128.0
+offset_right = 368.0
+offset_bottom = 160.0
+metadata/_edit_group_ = true
+
+[node name="LootName" type="Label" parent="PouchSection/LootContainer"]
+layout_mode = 2
+text = "Loot"
+label_settings = ExtResource("3_86n7i")
+
+[node name="LootValue" type="Label" parent="PouchSection/LootContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("3_86n7i")
+
+[node name="BackpackSection" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_top = 160.0
+offset_right = 768.0
+offset_bottom = 384.0
+
+[node name="SalvageButton" type="Button" parent="BackpackSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 448.0
+offset_right = 576.0
+offset_bottom = 32.0
+text = "SALVAGE ALL"
+
+[node name="BackpackLabel" type="Label" parent="BackpackSection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 336.0
+offset_right = 432.0
+offset_bottom = 32.0
+mouse_filter = 0
+text = "BACKPACK"
+label_settings = ExtResource("3_86n7i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackpackBG" type="ColorRect" parent="BackpackSection"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 224.0
+color = Color(0.392157, 0.392157, 0.392157, 1)
+metadata/_edit_group_ = true
+
+[node name="Backpack" type="GridContainer" parent="BackpackSection/BackpackBG"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 8
+
+[connection signal="equipment_changed" from="EquippedSection/EquippedBG/Equipped/EquipSlot1" to="." method="_on_equipment_changed"]
+[connection signal="equipment_hovered" from="EquippedSection/EquippedBG/Equipped/EquipSlot1" to="." method="_on_equipment_hovered"]
+[connection signal="slot_selected" from="EquippedSection/EquippedBG/Equipped/EquipSlot1" to="." method="_on_slot_selected"]
+[connection signal="equipment_changed" from="EquippedSection/EquippedBG/Equipped/EquipSlot2" to="." method="_on_equipment_changed"]
+[connection signal="equipment_hovered" from="EquippedSection/EquippedBG/Equipped/EquipSlot2" to="." method="_on_equipment_hovered"]
+[connection signal="slot_selected" from="EquippedSection/EquippedBG/Equipped/EquipSlot2" to="." method="_on_slot_selected"]
+[connection signal="equipment_changed" from="EquippedSection/EquippedBG/Equipped/EquipSlot3" to="." method="_on_equipment_changed"]
+[connection signal="equipment_hovered" from="EquippedSection/EquippedBG/Equipped/EquipSlot3" to="." method="_on_equipment_hovered"]
+[connection signal="slot_selected" from="EquippedSection/EquippedBG/Equipped/EquipSlot3" to="." method="_on_slot_selected"]
+[connection signal="equipment_changed" from="EquippedSection/EquippedBG/Equipped/EquipSlot4" to="." method="_on_equipment_changed"]
+[connection signal="equipment_hovered" from="EquippedSection/EquippedBG/Equipped/EquipSlot4" to="." method="_on_equipment_hovered"]
+[connection signal="slot_selected" from="EquippedSection/EquippedBG/Equipped/EquipSlot4" to="." method="_on_slot_selected"]
+[connection signal="mouse_entered" from="PouchSection/LootLevelContainer" to="." method="_on_loot_level_container_mouse_entered"]
+[connection signal="mouse_exited" from="PouchSection/LootLevelContainer" to="." method="_on_loot_level_container_mouse_exited"]
+[connection signal="pressed" from="BackpackSection/SalvageButton" to="." method="salvage_backpack"]

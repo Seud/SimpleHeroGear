@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://dwijaoh6spc7q"]
+
+[ext_resource type="Resource" uid="uid://bcfdgsgtx7evq" path="res://src/characters/ai/ai_default.tres" id="1_vo1mh"]
+[ext_resource type="Resource" uid="uid://dqyfon6n8onrq" path="res://src/characters/combat/ci_default.tres" id="2_1llfd"]
+[ext_resource type="Script" path="res://src/characters/info/character_info.gd" id="3_ohsyi"]
+
+[resource]
+script = ExtResource("3_ohsyi")
+id = "enemy"
+name = "Enemy"
+description = "A generic enemy."
+value = 1.0
+ai_info = ExtResource("1_vo1mh")
+combatant_info = ExtResource("2_1llfd")
