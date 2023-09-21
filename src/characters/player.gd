@@ -26,6 +26,9 @@ func _on_equipment_equipment_changed(stats):
 func adventure_start():
 	$Equipment.hide_backpack()
 
+func encounter_start():
+	pass
+
 func battle_start():
 	$Equipment.lock_pouch(true)
 	$PlayerUI.toggle_player_controls(true)
@@ -45,6 +48,9 @@ func battle_end():
 	$PlayerUI.toggle_player_controls(false)
 	$PlayerUI.set_forward_button(false)
 	$Equipment.lock_pouch(false)
+
+func encounter_end():
+	pass
 
 func adventure_end():
 	$Equipment.show_backpack()

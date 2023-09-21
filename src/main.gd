@@ -7,34 +7,44 @@ var enemy : Combatant
 
 func adventure_start():
 	$Player.adventure_start()
-	$Enemy.adventure_start()
-	await Global.catch_up()
+	$Encounter.adventure_start()
+	await get_tree().create_timer(Global.BASE_ANIMATION_LENGTH).timeout
+
+func encounter_start():
+	$Player.encounter_start()
+	$Encounter.encounter_start()
+	await get_tree().create_timer(Global.ENCOUNTER_ANIMATION_LENGTH).timeout
 
 func battle_start():
 	$Player.battle_start()
-	$Enemy.battle_start()
-	await Global.catch_up()
+	$Encounter.battle_start()
+	await get_tree().create_timer(Global.ENEMY_ANIMATION_LENGTH).timeout
 
 func round_start():
 	$Player.round_start()
-	$Enemy.round_start()
+	$Encounter.round_start()
 
 func round_end():
 	$Player.round_end()
-	$Enemy.round_end()
+	$Encounter.round_end()
 
 func battle_end():
 	$Player.battle_end()
-	$Enemy.battle_end()
-	await Global.catch_up()
+	$Encounter.battle_end()
+	await get_tree().create_timer(Global.ENEMY_ANIMATION_LENGTH).timeout
+
+func encounter_end():
+	$Player.encounter_end()
+	$Encounter.encounter_end()
+	await get_tree().create_timer(Global.ENCOUNTER_ANIMATION_LENGTH).timeout
 
 func adventure_end():
 	$Player.adventure_end()
-	$Enemy.adventure_end()
-	await Global.catch_up()
+	$Encounter.adventure_end()
+	await get_tree().create_timer(Global.BASE_ANIMATION_LENGTH).timeout
 
-func encounter(id : String, level : float):
-	$Enemy.load_data(id, level)
+func encounter_battle(id : String, level : float):
+	$Encounter.load_battle_data(id, level)
 	await battle_start()
 	
 	var battle = true
@@ -67,7 +77,7 @@ func _ready():
 	Global.connect("event_logged", log_text)
 	
 	hero = $Player.player_combatant
-	enemy = $Enemy.enemy_combatant
+	enemy = $Encounter.enemy_combatant
 	
 	hero.connect("event_logged", $GameLog.log_text)
 	enemy.connect("event_logged", $GameLog.log_text)
@@ -81,7 +91,7 @@ func _ready():
 	
 	while(hero.hp_p > 0):
 		log_text("Enemy %d is approaching !" % enemy_count)
-		await encounter("test", log(2) / log(3))
+		await encounter_battle("test", log(2) / log(3))
 		
 		if(enemy.hp_p <= 0):
 			log_text("Enemy defeated !")

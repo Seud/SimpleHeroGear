@@ -79,14 +79,14 @@ enum AttackType {CRIT, STRONG, NORMAL, WEAK, NONE}
 ## Duration of default animations
 @export var BASE_ANIMATION_LENGTH : float = 1
 
-## Duration of catchup timeout - should be equal to the highest animation length
-@export var CATCHUP_ANIMATION_LENGTH : float = 1
-
 ## Duration of pouch/backpack move
 @export var BACKPACK_ANIMATION_LENGTH : float = 0.75
 
-## Duration of enemy show/hide
-@export var ENEMY_ANIMATION_LENGTH : float = 1
+## Duration of battle show/hide
+@export var ENEMY_ANIMATION_LENGTH : float = 0.5
+
+## Duration of encounter show/hide
+@export var ENCOUNTER_ANIMATION_LENGTH : float = 1
 
 ## Duration of +/- changes display
 @export var MOD_ANIMATION_LENGTH : float = 2
@@ -125,9 +125,6 @@ func mod_resource(diff : float, new_value : float, node_total : Control, node_mo
 	node_mod.modulate = color
 	node_mod.text = _sign + Global.format_sci(diff, integer)
 	tweens[tween].tween_property(node_mod, "modulate:a", 0, MOD_ANIMATION_LENGTH).set_trans(Tween.TRANS_QUAD)
-
-func catch_up():
-	await get_tree().create_timer(CATCHUP_ANIMATION_LENGTH).timeout
 
 ## Shows an element using a tween
 func fadein_element(element : CanvasItem, duration : float, tween : String):

@@ -1,20 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0pcnyrxfovtl"]
+[gd_scene load_steps=5 format=3 uid="uid://d0pcnyrxfovtl"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_2heo6"]
 [ext_resource type="PackedScene" uid="uid://dcvrg4n1gk4nj" path="res://src/characters/player.tscn" id="1_f06jy"]
-[ext_resource type="PackedScene" uid="uid://cafbq0vd7w5es" path="res://src/characters/enemy.tscn" id="2_4qgb1"]
 [ext_resource type="PackedScene" uid="uid://c3x5gwitkflmr" path="res://src/ui/game_log.tscn" id="4_owptf"]
-[ext_resource type="PackedScene" uid="uid://nlse46bhaooq" path="res://src/characters/encounter.tscn" id="4_xmexc"]
+[ext_resource type="PackedScene" uid="uid://nlse46bhaooq" path="res://src/encounters/encounter.tscn" id="4_xmexc"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2heo6")
 
 [node name="Player" parent="." instance=ExtResource("1_f06jy")]
 position = Vector2(8, 8)
-
-[node name="Enemy" parent="." instance=ExtResource("2_4qgb1")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(744, 8)
 
 [node name="Encounter" parent="." instance=ExtResource("4_xmexc")]
 modulate = Color(1, 1, 1, 0)
