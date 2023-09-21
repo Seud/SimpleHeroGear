@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://nlse46bhaooq"]
+
+[ext_resource type="Script" path="res://src/encounters/encounter.gd" id="1_l6g7o"]
+[ext_resource type="Texture2D" uid="uid://ctnawnjqtoylk" path="res://icon.svg" id="2_3kc4r"]
+[ext_resource type="PackedScene" uid="uid://rq8a5oiksov0" path="res://src/ui/unit_ui.tscn" id="2_6a4wy"]
+[ext_resource type="PackedScene" uid="uid://d1nounfoadyb5" path="res://src/ui/event_ui.tscn" id="3_a01p6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l4ry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3kc4r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Encounter" type="Node2D"]
+script = ExtResource("1_l6g7o")
+
+[node name="EncounterUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 144.0
+offset_bottom = 144.0
+
+[node name="EnemyUI" parent="EncounterUI" instance=ExtResource("2_6a4wy")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="EventUI" parent="EncounterUI" instance=ExtResource("3_a01p6")]
+unique_name_in_owner = true
+
+[node name="EncounterSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 64)
+sprite_frames = SubResource("SpriteFrames_6l4ry")
+
+[node name="EncounterHover" type="Control" parent="EncounterSprite"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="choice_made" from="EncounterUI/EventUI" to="." method="_on_event_ui_choice_made"]
+[connection signal="mouse_entered" from="EncounterSprite/EncounterHover" to="." method="_on_encounter_hover_mouse_entered"]
+[connection signal="mouse_exited" from="EncounterSprite/EncounterHover" to="." method="_general_mouse_exited"]

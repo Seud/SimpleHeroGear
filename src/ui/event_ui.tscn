@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1nounfoadyb5"]
+
+[ext_resource type="Script" path="res://src/ui/event_ui.gd" id="1_efp67"]
+
+[node name="EventUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_efp67")
+
+[node name="EventText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 192.0
+text = "Something is happening."
+metadata/_edit_group_ = true
+
+[node name="EventBG" type="ColorRect" parent="EventText"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.25098, 1)
+
+[node name="EventChoice1" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 208.0
+offset_right = 296.0
+offset_bottom = 240.0
+text = "Do something"
+
+[node name="EventChoice2" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 296.0
+offset_bottom = 288.0
+text = "Do something else"
+
+[node name="EventChoice3" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 304.0
+offset_right = 296.0
+offset_bottom = 336.0
+text = "Don't do anything"
+
+[connection signal="mouse_entered" from="EventChoice1" to="." method="_on_event_choice_1_mouse_entered"]
+[connection signal="mouse_exited" from="EventChoice1" to="." method="_general_mouse_exited"]
+[connection signal="pressed" from="EventChoice1" to="." method="_on_event_choice_1_pressed"]
+[connection signal="mouse_entered" from="EventChoice2" to="." method="_on_event_choice_2_mouse_entered"]
+[connection signal="mouse_exited" from="EventChoice2" to="." method="_general_mouse_exited"]
+[connection signal="pressed" from="EventChoice2" to="." method="_on_event_choice_2_pressed"]
+[connection signal="mouse_entered" from="EventChoice3" to="." method="_on_event_choice_3_mouse_entered"]
+[connection signal="mouse_exited" from="EventChoice3" to="." method="_general_mouse_exited"]
+[connection signal="pressed" from="EventChoice3" to="." method="_on_event_choice_3_pressed"]

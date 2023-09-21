@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EncounterInfo" load_steps=2 format=3 uid="uid://yfqgwlre7icc"]
+
+[ext_resource type="Script" path="res://src/encounters/info/encounter_info.gd" id="1_c2vcv"]
+
+[resource]
+script = ExtResource("1_c2vcv")
+id = "encounter"
+name = "Encounter"
+description = "A very generic encounter"
+choices = 1
+encounter_text = "Something is happening"
+choice1_name = "Do something"
+choice1_description = "You will feel different afterwards"
+choice1_text = "You did something, and now you feel different."
+choice2_name = ""
+choice2_description = ""
+choice2_text = ""
+choice3_name = ""
+choice3_description = ""
+choice3_text = ""
